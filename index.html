@@ -450,9 +450,9 @@
         <div class="text-2xl mb-2">🔓</div>
         <h4 class="text-xl font-bold mb-2">전체 심층 분석 결과 보기</h4>
         <p class="text-sm text-gray-600 mb-5">30일 재회 로드맵, 맞춤 메시지 템플릿, 위험 행동 가이드까지<br/>당신만을 위한 완전한 재회 컨설팅 리포트</p>
-        <a href="#pricing" class="inline-block bg-rose-500 hover:bg-rose-600 text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-rose-200 transition">
+        <button type="button" data-pay="premium" class="open-pay inline-block bg-rose-500 hover:bg-rose-600 text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-rose-200 transition">
           심층 분석 결제하고 보기 →
-        </a>
+        </button>
         <p class="text-xs text-gray-400 mt-3">단 1회 결제 · 평생 다시보기</p>
       </div>
     </div>
@@ -501,7 +501,7 @@
         <li class="flex gap-2"><span>✓</span> 상대 감정 단계 정밀 진단</li>
         <li class="flex gap-2"><span>✓</span> PDF 리포트 다운로드</li>
       </ul>
-      <button class="block w-full bg-white text-rose-500 hover:bg-gray-50 font-bold py-3 rounded-xl transition">
+      <button type="button" data-pay="premium" class="open-pay block w-full bg-white text-rose-500 hover:bg-gray-50 font-bold py-3 rounded-xl transition">
         결제하기
       </button>
     </div>
@@ -518,7 +518,7 @@
         <li class="flex gap-2"><span class="text-rose-500">✓</span> 실시간 메시지 검수</li>
         <li class="flex gap-2"><span class="text-rose-500">✓</span> 14일 사후 케어</li>
       </ul>
-      <button class="block w-full border border-rose-300 text-rose-500 hover:bg-rose-50 font-bold py-3 rounded-xl transition">
+      <button type="button" data-pay="expert" class="open-pay block w-full border border-rose-300 text-rose-500 hover:bg-rose-50 font-bold py-3 rounded-xl transition">
         상담 예약
       </button>
     </div>
@@ -605,6 +605,80 @@
     <p class="text-xs text-gray-400 mt-6">© 2026 다시,우리 · 본 서비스는 AI 기반 참고용 분석이며 전문 상담을 대체하지 않습니다.</p>
   </div>
 </footer>
+
+<!-- ===================== PAYMENT MODAL ===================== -->
+<div id="payModal" class="hidden fixed inset-0 z-50 items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+  <div class="bg-white rounded-3xl w-full max-w-md shadow-2xl overflow-hidden fade-in">
+    <!-- 헤더 -->
+    <div class="bg-gradient-to-r from-rose-500 to-purple-500 p-6 text-white">
+      <div class="flex items-start justify-between">
+        <div>
+          <div class="text-xs opacity-90 mb-1" id="payPlanLabel">PREMIUM</div>
+          <h3 class="text-xl font-bold" id="payPlanName">심층 재회 컨설팅</h3>
+        </div>
+        <button type="button" id="closePay" class="text-white/80 hover:text-white text-2xl leading-none">✕</button>
+      </div>
+      <div class="mt-4 flex items-baseline gap-2">
+        <span class="text-3xl font-bold" id="payPrice">₩19,900</span>
+        <span class="text-xs opacity-80" id="payPriceNote">1회 결제 · 평생 다시보기</span>
+      </div>
+    </div>
+
+    <!-- 본문 -->
+    <div id="payBody" class="p-6">
+      <p class="text-sm text-gray-600 mb-5">결제 수단을 선택해주세요.</p>
+      <div class="space-y-2">
+        <button type="button" data-method="kakao" class="pay-method w-full flex items-center gap-3 border border-gray-200 hover:border-yellow-400 hover:bg-yellow-50 rounded-xl px-4 py-3.5 transition">
+          <span class="w-9 h-9 rounded-lg bg-yellow-300 flex items-center justify-center text-base font-bold">K</span>
+          <span class="font-semibold text-sm">카카오페이</span>
+          <span class="ml-auto text-xs text-gray-400">간편결제</span>
+        </button>
+        <button type="button" data-method="toss" class="pay-method w-full flex items-center gap-3 border border-gray-200 hover:border-blue-400 hover:bg-blue-50 rounded-xl px-4 py-3.5 transition">
+          <span class="w-9 h-9 rounded-lg bg-blue-500 text-white flex items-center justify-center text-base font-bold">T</span>
+          <span class="font-semibold text-sm">토스페이</span>
+          <span class="ml-auto text-xs text-gray-400">간편결제</span>
+        </button>
+        <button type="button" data-method="naver" class="pay-method w-full flex items-center gap-3 border border-gray-200 hover:border-green-400 hover:bg-green-50 rounded-xl px-4 py-3.5 transition">
+          <span class="w-9 h-9 rounded-lg bg-green-500 text-white flex items-center justify-center text-base font-bold">N</span>
+          <span class="font-semibold text-sm">네이버페이</span>
+          <span class="ml-auto text-xs text-gray-400">간편결제</span>
+        </button>
+        <button type="button" data-method="card" class="pay-method w-full flex items-center gap-3 border border-gray-200 hover:border-rose-400 hover:bg-rose-50 rounded-xl px-4 py-3.5 transition">
+          <span class="w-9 h-9 rounded-lg bg-gray-700 text-white flex items-center justify-center text-base font-bold">💳</span>
+          <span class="font-semibold text-sm">신용/체크카드</span>
+          <span class="ml-auto text-xs text-gray-400">일반결제</span>
+        </button>
+      </div>
+
+      <div class="mt-5 text-xs text-gray-400 text-center leading-relaxed">
+        결제 후 즉시 모든 콘텐츠를 이용하실 수 있어요.<br/>
+        ⚠️ 현재 데모 버전입니다. 실제 결제는 진행되지 않습니다.
+      </div>
+    </div>
+
+    <!-- 결제 중 화면 -->
+    <div id="payProcessing" class="hidden p-10 text-center">
+      <div class="text-5xl mb-4 animate-pulse">💳</div>
+      <h4 class="font-bold text-lg mb-2">결제 진행 중...</h4>
+      <p class="text-sm text-gray-500 mb-5" id="payProcessingMsg">결제 정보를 안전하게 처리하고 있어요</p>
+      <div class="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
+        <div id="payProgress" class="bg-gradient-to-r from-rose-400 to-purple-400 h-full transition-all duration-700" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- 결제 완료 화면 -->
+    <div id="paySuccess" class="hidden p-10 text-center">
+      <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <span class="text-3xl">✓</span>
+      </div>
+      <h4 class="font-bold text-xl mb-2">결제가 완료되었어요!</h4>
+      <p class="text-sm text-gray-600 mb-6">이제 심층 분석 결과 전체를 확인하실 수 있습니다.</p>
+      <button type="button" id="goToUnlocked" class="w-full bg-rose-500 hover:bg-rose-600 text-white font-bold py-3 rounded-xl transition">
+        심층 분석 결과 보기 →
+      </button>
+    </div>
+  </div>
+</div>
 
 <!-- ===================== SCRIPT ===================== -->
 <script>
@@ -806,6 +880,100 @@ function renderResult(chat, myMbti, partnerMbti) {
     mbtiCard.classList.add('hidden');
   }
 }
+
+// ---- 결제 모달 ----
+const PLANS = {
+  premium: { label: 'PREMIUM', name: '심층 재회 컨설팅', price: '₩19,900', note: '1회 결제 · 평생 다시보기' },
+  expert:  { label: 'EXPERT',  name: '1:1 전문가 상담',  price: '₩79,000', note: '60분 화상/채팅 상담' }
+};
+
+const payModal = document.getElementById('payModal');
+const payBody = document.getElementById('payBody');
+const payProcessing = document.getElementById('payProcessing');
+const paySuccess = document.getElementById('paySuccess');
+
+function openPay(plan) {
+  const p = PLANS[plan] || PLANS.premium;
+  document.getElementById('payPlanLabel').textContent = p.label;
+  document.getElementById('payPlanName').textContent = p.name;
+  document.getElementById('payPrice').textContent = p.price;
+  document.getElementById('payPriceNote').textContent = p.note;
+  payBody.classList.remove('hidden');
+  payProcessing.classList.add('hidden');
+  paySuccess.classList.add('hidden');
+  payModal.classList.remove('hidden');
+  payModal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePay() {
+  payModal.classList.add('hidden');
+  payModal.classList.remove('flex');
+  document.body.style.overflow = '';
+}
+
+// 결제 버튼들에 이벤트 연결
+document.querySelectorAll('.open-pay').forEach(btn => {
+  btn.addEventListener('click', () => openPay(btn.dataset.pay || 'premium'));
+});
+
+document.getElementById('closePay').addEventListener('click', closePay);
+payModal.addEventListener('click', (e) => {
+  if (e.target === payModal) closePay();
+});
+
+// 결제 수단 클릭 → 처리 → 성공
+document.querySelectorAll('.pay-method').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const methodName = btn.querySelector('.font-semibold').textContent;
+    payBody.classList.add('hidden');
+    payProcessing.classList.remove('hidden');
+    document.getElementById('payProcessingMsg').textContent = `${methodName}로 결제를 진행하고 있어요`;
+
+    const progress = document.getElementById('payProgress');
+    progress.style.width = '0%';
+    setTimeout(() => progress.style.width = '40%', 100);
+    setTimeout(() => progress.style.width = '80%', 800);
+    setTimeout(() => progress.style.width = '100%', 1500);
+
+    setTimeout(() => {
+      payProcessing.classList.add('hidden');
+      paySuccess.classList.remove('hidden');
+      unlockPremiumContent();
+    }, 2200);
+  });
+});
+
+// 결제 완료 → 잠금 해제 후 결과 영역으로 이동
+document.getElementById('goToUnlocked').addEventListener('click', () => {
+  closePay();
+  const result = document.getElementById('resultSection');
+  if (!result.classList.contains('hidden')) {
+    result.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
+// 잠금 콘텐츠 풀어주기
+function unlockPremiumContent() {
+  document.querySelectorAll('.blur-locked').forEach(el => {
+    el.classList.remove('blur-locked');
+  });
+  // CTA 오버레이 제거
+  document.querySelectorAll('#resultSection .absolute.inset-x-0.bottom-0').forEach(el => {
+    el.style.display = 'none';
+  });
+  // 헤더 자물쇠 → 잠금 해제 표시
+  document.querySelectorAll('#resultSection .bg-gradient-to-r.from-rose-500.to-purple-500.px-8.py-3').forEach(el => {
+    el.innerHTML = '<span>✅ 심층 분석 결과 (잠금 해제됨)</span><span class="text-xs bg-white/20 px-2 py-0.5 rounded-full">UNLOCKED</span>';
+  });
+}
+
+// ESC로 모달 닫기
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !payModal.classList.contains('hidden')) closePay();
+});
 
 // 점수 바 애니메이션을 위해 결과 표시 시 약간의 딜레이
 const observer = new IntersectionObserver((entries) => {
