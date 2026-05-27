@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>개인정보처리방침 — 다시, 우리</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+  html, body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+  .gradient-bg { background: linear-gradient(135deg, #fef2f5 0%, #fff7f0 50%, #f5f0ff 100%); }
+  .gradient-text { background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .doc h2 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #1f2937; }
+  .doc h3 { font-size: 1rem; font-weight: 600; margin-top: 1.25rem; margin-bottom: 0.5rem; color: #374151; }
+  .doc p, .doc li { color: #4b5563; line-height: 1.75; font-size: 0.95rem; }
+  .doc ul { margin-left: 1.25rem; list-style: disc; margin-top: 0.5rem; }
+  .doc ol { margin-left: 1.25rem; list-style: decimal; margin-top: 0.5rem; }
+  .doc table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  .doc th, .doc td { border: 1px solid #e5e7eb; padding: 0.6rem 0.8rem; text-align: left; }
+  .doc th { background: #fef2f5; font-weight: 600; }
+</style>
+</head>
+<body class="gradient-bg min-h-screen text-gray-800">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-40 backdrop-blur-md bg-white/70 border-b border-rose-100">
+  <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 font-bold text-xl">
+      <span class="text-2xl">💌</span>
+      <span class="gradient-text">다시, 우리</span>
+    </a>
+    <a href="index.html" class="bg-rose-500 hover:bg-rose-600 text-white text-sm font-semibold px-4 py-2 rounded-full transition">
+      홈으로
+    </a>
+  </div>
+</header>
+
+<main class="max-w-3xl mx-auto px-5 py-12">
+  <div class="bg-white rounded-3xl shadow-sm p-8 md:p-12 doc">
+    <div class="border-b border-gray-100 pb-6 mb-8">
+      <h1 class="text-3xl font-bold mb-2">개인정보처리방침</h1>
+      <p class="text-sm text-gray-500">최종 개정일: 2026년 5월 27일</p>
+    </div>
+
+    <p>
+      <b>"다시, 우리"</b>(이하 "서비스")는 「개인정보 보호법」 및 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 등 관련 법령을 준수하며, 이용자의 개인정보 보호를 위해 다음과 같은 방침을 두고 있습니다.
+    </p>
+
+    <h2>1. 수집하는 개인정보 항목 및 수집 방법</h2>
+    <p>서비스는 분석 기능 제공을 위해 다음 정보를 일시적으로 수집·처리합니다.</p>
+    <table>
+      <thead>
+        <tr><th>구분</th><th>항목</th><th>수집 방법</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>분석용 입력 정보</td>
+          <td>이용자가 직접 입력한 메신저(카카오톡 등) 대화 텍스트, 성별, 사귄 기간, 이별 시기, 이별 사유, 본인 및 상대방의 MBTI</td>
+          <td>이용자 직접 입력</td>
+        </tr>
+        <tr>
+          <td>자동 수집 정보</td>
+          <td>IP 주소, 쿠키, 접속 일시, 브라우저 종류, 기기 정보</td>
+          <td>서비스 이용 과정에서 자동 수집</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="text-sm bg-rose-50 border border-rose-100 rounded-xl p-4 mt-2">
+      ⚠️ <b>중요:</b> 이용자가 입력한 대화 텍스트는 분석 처리 직후 즉시 폐기되며, 서버 또는 데이터베이스에 저장되지 않습니다.
+    </p>
+
+    <h2>2. 개인정보의 수집 및 이용 목적</h2>
+    <ul>
+      <li>AI 기반 대화 분석 결과 제공</li>
+      <li>이용자별 맞춤 재회 전략 추천</li>
+      <li>서비스 품질 개선 및 통계 분석 (개인 식별 불가능한 형태)</li>
+      <li>부정 이용 방지 및 서비스 안정성 유지</li>
+    </ul>
+
+    <h2>3. 개인정보의 보유 및 이용 기간</h2>
+    <table>
+      <thead><tr><th>항목</th><th>보유 기간</th></tr></thead>
+      <tbody>
+        <tr><td>대화 텍스트</td><td>분석 직후 즉시 삭제 (보관하지 않음)</td></tr>
+        <tr><td>분석용 부가 정보 (MBTI, 사귄 기간 등)</td><td>분석 종료 시까지 (세션 종료 즉시 폐기)</td></tr>
+        <tr><td>자동 수집 정보 (IP, 쿠키 등)</td><td>최대 1년 (통계 및 부정이용 방지 목적)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>4. 개인정보의 제3자 제공</h2>
+    <p>서비스는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 다음과 같은 경우는 예외로 합니다.</p>
+    <ul>
+      <li>이용자가 사전에 동의한 경우</li>
+      <li>법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</li>
+    </ul>
+
+    <h2>5. 개인정보 처리의 위탁</h2>
+    <p>서비스는 원활한 운영을 위해 다음과 같이 개인정보 처리 업무를 위탁할 수 있습니다.</p>
+    <table>
+      <thead><tr><th>수탁 업체</th><th>위탁 업무</th></tr></thead>
+      <tbody>
+        <tr><td>GitHub, Inc.</td><td>웹사이트 호스팅 (GitHub Pages)</td></tr>
+        <tr><td>Google LLC</td><td>광고 게재 (Google AdSense), 트래픽 분석</td></tr>
+      </tbody>
+    </table>
+
+    <h2>6. 광고 및 쿠키의 사용</h2>
+    <p>본 서비스는 Google AdSense를 통한 광고를 게재할 수 있으며, 이 과정에서 제3자 광고 사업자가 쿠키를 사용할 수 있습니다.</p>
+    <ul>
+      <li>Google은 DoubleClick 쿠키 등을 사용하여 이용자의 사이트 방문 정보를 기반으로 맞춤형 광고를 게재할 수 있습니다.</li>
+      <li>이용자는 <a href="https://www.google.com/settings/ads" target="_blank" class="text-rose-500 underline">Google 광고 설정</a>에서 맞춤형 광고를 비활성화할 수 있습니다.</li>
+      <li>브라우저 설정을 통해 쿠키 저장을 거부할 수 있으나, 일부 서비스 이용에 제한이 있을 수 있습니다.</li>
+    </ul>
+
+    <h2>7. 정보주체의 권리·의무 및 행사 방법</h2>
+    <p>이용자는 다음과 같은 권리를 행사할 수 있습니다.</p>
+    <ol>
+      <li>개인정보 열람 요구</li>
+      <li>오류 등이 있을 경우 정정 요구</li>
+      <li>삭제 요구</li>
+      <li>처리 정지 요구</li>
+    </ol>
+    <p>위 권리 행사는 아래 연락처로 요청해 주시기 바라며, 서비스는 지체 없이 조치하겠습니다.</p>
+
+    <h2>8. 개인정보의 안전성 확보 조치</h2>
+    <ul>
+      <li>대화 텍스트의 즉시 삭제 처리</li>
+      <li>개인정보에 대한 접근 권한의 제한</li>
+      <li>HTTPS 암호화 통신 적용</li>
+      <li>해킹 등에 대비한 기술적 대책 운영</li>
+    </ul>
+
+    <h2>9. 만 14세 미만 아동의 개인정보 보호</h2>
+    <p>서비스는 만 14세 미만 아동의 개인정보를 수집하지 않으며, 회원 가입을 받지 않습니다. 본 서비스는 만 19세 이상의 성인을 대상으로 합니다.</p>
+
+    <h2>10. 개인정보 보호책임자</h2>
+    <div class="bg-gray-50 rounded-xl p-4">
+      <p><b>개인정보 보호책임자</b></p>
+      <p>· 성명: [운영자 성명 입력 필요]</p>
+      <p>· 연락처: [이메일 주소 입력 필요]</p>
+    </div>
+
+    <h2>11. 권익침해 구제 방법</h2>
+    <p>개인정보 침해로 인한 신고나 상담이 필요하신 경우 아래 기관에 문의하실 수 있습니다.</p>
+    <ul>
+      <li>개인정보분쟁조정위원회: 1833-6972 (www.kopico.go.kr)</li>
+      <li>개인정보침해신고센터: 118 (privacy.kisa.or.kr)</li>
+      <li>대검찰청: 1301 (www.spo.go.kr)</li>
+      <li>경찰청: 182 (cyberbureau.police.go.kr)</li>
+    </ul>
+
+    <h2>12. 개인정보처리방침의 변경</h2>
+    <p>본 방침은 법령·정책 또는 보안기술의 변경에 따라 내용의 추가·삭제 및 수정이 있을 수 있으며, 변경 시 서비스 내 공지를 통해 알려드립니다.</p>
+  </div>
+
+  <div class="text-center mt-8">
+    <a href="index.html" class="text-rose-500 hover:underline text-sm">← 홈으로 돌아가기</a>
+  </div>
+</main>
+
+<footer class="border-t border-rose-100 bg-white/50 mt-10">
+  <div class="max-w-6xl mx-auto px-5 py-8 text-center text-xs text-gray-400">
+    © 2026 다시, 우리 · 본 서비스는 AI 기반 참고용 분석이며 전문 상담을 대체하지 않습니다.
+  </div>
+</footer>
+
+</body>
+</html>
