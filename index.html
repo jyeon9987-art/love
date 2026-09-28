@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>다시, 우리 — 카톡 대화로 보는 재회 가능성 분석</title>
+<title>톨 — 카톡 대화로 보는 재회 가능성 분석</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +46,7 @@
   <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
     <a href="#top" class="flex items-center gap-2 font-bold text-xl">
       <span class="text-2xl">💌</span>
-      <span class="gradient-text">다시, 우리</span>
+      <span class="gradient-text">톨</span>
     </a>
     <nav class="hidden md:flex gap-8 text-sm text-gray-600">
       <a href="#how" class="hover:text-rose-500">분석 방법</a>
@@ -564,14 +564,14 @@
 <!-- ===================== FOOTER ===================== -->
 <footer class="border-t border-rose-100 bg-white/50 mt-10">
   <div class="max-w-6xl mx-auto px-5 py-10 text-center text-sm text-gray-500">
-    <div class="font-bold text-lg gradient-text mb-2">다시, 우리</div>
+    <div class="font-bold text-lg gradient-text mb-2">톨</div>
     <p class="mb-4">당신의 마음에 한 줌의 답을 드리는 AI 재회 분석 서비스</p>
     <div class="flex justify-center gap-6 text-xs">
       <a href="terms.html" class="hover:text-rose-500">이용약관</a>
       <a href="privacy.html" class="hover:text-rose-500">개인정보처리방침</a>
-      <a href="mailto:[이메일주소입력]" class="hover:text-rose-500">문의하기</a>
+      <a href="mailto:tooolllie@gmail.com" class="hover:text-rose-500">문의하기</a>
     </div>
-    <p class="text-xs text-gray-400 mt-6">© 2026 다시,우리 · 본 서비스는 AI 기반 참고용 분석이며 전문 상담을 대체하지 않습니다.</p>
+    <p class="text-xs text-gray-400 mt-6">© 2026 톨 · 본 서비스는 AI 기반 참고용 분석이며 전문 상담을 대체하지 않습니다.</p>
   </div>
 </footer>
 
@@ -645,7 +645,7 @@ form.addEventListener('submit', async (e) => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
-        _subject: `[다시,우리] 새 신청 · ${LABELS.worry[data.worry]}`,
+        _subject: `[톨] 새 신청 · ${LABELS.worry[data.worry]}`,
         email: data.email,                  // 운영자가 메일에서 '답장'하면 신청자에게 바로 감
         '고민 유형': LABELS.worry[data.worry],
         '기본 정보': `${LABELS.gender[data.gender]} · 이별 ${LABELS.breakupTime[data.breakupTime]} · 연애 ${LABELS.datingPeriod[data.datingPeriod]} · 사유 ${LABELS.breakupReason[data.breakupReason]}`,
@@ -823,7 +823,7 @@ function buildReport(d) {
   const label = score >= 65 ? '재회 가능성이 충분히 보여요' : score >= 45 ? '아직 기회가 남아 있어요' : '신중하고 긴 호흡이 필요해요';
 
   const out = [];
-  out.push('안녕하세요, 다시,우리 운영팀입니다.');
+  out.push('안녕하세요, 톨 운영팀입니다.');
   out.push('보내주신 고민을 꼼꼼히 읽고 분석한 결과를 전해드려요.');
   out.push('');
   out.push(`■ 예상 재회 가능성: ${score}% — ${label}`);
@@ -855,7 +855,7 @@ function buildReport(d) {
   out.push(g.message);
   out.push('');
   out.push('※ 본 분석은 참고용이며 전문 상담을 대체하지 않아요. 당신의 선택을 응원할게요.');
-  out.push('— 다시,우리 운영팀');
+  out.push('— 톨 운영팀');
   return out.join('\n');
 }
 </script>

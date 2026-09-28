@@ -1,4 +1,4 @@
-# 다시, 우리 💌
+# 톨 💌
 
 고민·카톡 대화 기반 재회 분석 서비스 (무료 · 광고 수익 모델)
 
@@ -11,7 +11,7 @@
 ## 설정
 - `index.html`의 `FORM_ENDPOINT`에 Formspree 폼 주소 입력 (예: `https://formspree.io/f/xxxxxxx`)
 - 광고: `index.html`의 "광고 자리" 3곳에 Google AdSense 코드 삽입
-- 운영자 연락처: `index.html` 푸터, `privacy.html`, `terms.html`의 이메일 자리 채우기
+- 운영자 연락처: tooolllie@gmail.com
 
 ## 기술
 - HTML / Tailwind CSS (CDN) / Vanilla JS, 단일 정적 페이지
